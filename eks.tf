@@ -29,7 +29,7 @@ resource "aws_iam_role_policy_attachment" "prod-AmazonEKSServicePolicy" {
 
 resource "aws_eks_cluster" "prod" {
   name     = "prod"
-  role_arn = "arn:aws:iam::125296811046:user/terraform"
+  role_arn = aws_iam_role.eks_prod.arn
 
   vpc_config {
     subnet_ids = ["subnet-004322718acabdb56", "subnet-03683734ad4f920f8", "subnet-0e5b7685321faadcd"]

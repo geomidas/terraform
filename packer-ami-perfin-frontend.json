@@ -16,12 +16,12 @@
        {
          "type": "file",
          "source" : "../perfin-frontend",
-         "destination" : "frontend"
+         "destination" : "./"
        },
    
        {
        "type": "shell",
-       "inline": ["npm install", "npm start"],
+       "inline": ["npm install && npm start"],
        "pause_before": "10s"
        }
      ]
