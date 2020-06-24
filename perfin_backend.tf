@@ -4,7 +4,7 @@ resource "aws_key_pair" "ansible" {
 }
 
 # EC2 perfin backend
-resource "aws_instance" "perfin-backend" {
+resource "aws_instance" "perfin_backend" {
     count = 1
 
     ami           = "ami-0ab4942aa229e00e8"
@@ -18,6 +18,6 @@ resource "aws_instance" "perfin-backend" {
 
 # Elastic IP
 resource "aws_eip" "perfin-backend" {
-    instance = "${aws_instance.perfin-backend.id}"
+    instance = "${aws_instance.perfin_backend.id}"
     vpc      = true
 }
