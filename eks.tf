@@ -23,7 +23,7 @@ resource "aws_iam_role_policy_attachment" "prod-AmazonEKSClusterPolicy" {
 }
 
 resource "aws_iam_role_policy_attachment" "prod-AmazonEKSServicePolicy" {
-  policy_arn = aws_iam_role.eks_prod.arn
+  policy_arn = "arn:aws:iam::aws:policy/AmazonEKSServicePolicy"
   role       = aws_iam_role.eks_prod.name
 }
 
