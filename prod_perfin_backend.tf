@@ -11,10 +11,6 @@ resource "aws_instance" "perfin-backend" {
     instance_type = "t2.micro"
     key_name      = "ansible"
 
-    tags {
-      Name = "perfin-backend"
-    }
-
     lifecycle {
       create_before_destroy = true
     }
