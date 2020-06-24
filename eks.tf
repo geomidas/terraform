@@ -19,12 +19,12 @@ POLICY
 
 resource "aws_iam_role_policy_attachment" "prod-AmazonEKSClusterPolicy" {
   policy_arn = "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
-  role       = "${aws_iam_role.eks_prod.name}"
+  role       = aws_iam_role.eks_prod.name
 }
 
 resource "aws_iam_role_policy_attachment" "prod-AmazonEKSServicePolicy" {
   policy_arn = "arn:aws:iam::aws:policy/AmazonEKSServicePolicy"
-  role       = "${aws_iam_role.eks_prod.name}"
+  role       = aws_iam_role.eks_prod.name
 }
 
 resource "aws_eks_cluster" "prod" {
