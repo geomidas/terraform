@@ -7,7 +7,7 @@ resource "aws_key_pair" "ansible" {
 resource "aws_instance" "perfin-backend" {
     count = 1
 
-    ami           = "perfin-backend-v1"
+    ami           = "ami-0ab4942aa229e00e8"
     instance_type = "t2.micro"
     key_name      = "ansible"
 
