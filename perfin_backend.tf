@@ -9,7 +9,7 @@ resource "aws_instance" "perfin-backend" {
 
     ami           = "ami-0ab4942aa229e00e8"
     instance_type = "t2.micro"
-    key_name      = "ansible"
+    key_name      = "ansible-key"
 
     lifecycle {
       create_before_destroy = true
