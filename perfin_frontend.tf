@@ -18,7 +18,7 @@ resource "aws_instance" "frontend" {
     key_name      = "ansible-key"
 
     vpc_security_group_ids = [
-        aws_security_group.perfin_frontend.id
+        aws_security_group.frontend.id
     ]
 
     tags = {
