@@ -1,8 +1,3 @@
-#resource "aws_s3_bucket" "tf_bucket_private" {
-#  bucket = "tf-bucket-private"
-#  acl    = "private"
-#}
-
 #resource "aws_s3_bucket" "tf_bucket_public" {
 #  bucket = "tf-bucket-2"
 #  acl    = "public-read"
