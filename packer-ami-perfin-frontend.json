@@ -5,7 +5,7 @@
        "source_ami": "ami-844e0bf7",
        "instance_type": "t2.micro",
        "ssh_username": "ubuntu",
-       "ami_name": "perfin-backend-v1"
+       "ami_name": "perfin-frontend-v1"
      }],
      "provisioners": [
        {
@@ -15,13 +15,13 @@
        },
        {
          "type": "file",
-         "source" : "../perfin-backend",
-         "destination" : "perfin-backend"
+         "source" : "../perfin-frontend",
+         "destination" : "frontend"
        },
    
        {
        "type": "shell",
-       "inline": ["cd api", "npm install"],
+       "inline": ["npm install", "npm start"],
        "pause_before": "10s"
        }
      ]
