@@ -23,7 +23,7 @@ resource "aws_iam_role_policy_attachment" "prod-AmazonEKSClusterPolicy" {
 }
 
 resource "aws_iam_role_policy_attachment" "prod-AmazonEKSServicePolicy" {
-  policy_arn = "arn:aws:iam::aws:policy/AmazonEKSServicePolicy"
+  policy_arn = aws_iam_role.eks_prod.arn
   role       = aws_iam_role.eks_prod.name
 }
 
@@ -42,4 +42,15 @@ output "endpoint" {
 
 output "kubeconfig-certificate-authority-data" {
   value = aws_eks_cluster.prod.certificate_authority.0.data
+}
+
+data "aws_eks_cluster_auth" "prod" {
+  name = "eks_prod"
+}
+
+provider "kubernetes" {
+  host                   = aws_eks_cluster.prod.endpoint
+  cluster_ca_certificate = base64decode(data.aws_eks_cluster.prod.certificate_authority.0.data)
+  token                  = data.aws_eks_cluster_auth.prod.token
+  load_config_file       = false
 }
