@@ -1,4 +1,4 @@
-variable "aws_ami_id" {}
+#variable "aws_ami_id" {}
 
 resource "aws_default_vpc" "default" {}
 
