@@ -33,7 +33,7 @@ resource "aws_eks_node_group" "prod" {
   node_group_name = "eks_prod"
   node_role_arn   = aws_iam_role.eks_prod_node_group.arn
   subnet_ids      = ["subnet-004322718acabdb56", "subnet-03683734ad4f920f8", "subnet-0e5b7685321faadcd"]
-  instance_types  = ["t2.micro"]
+  instance_types  = ["t2.xlarge"]
 
   scaling_config {
     desired_size = 1
