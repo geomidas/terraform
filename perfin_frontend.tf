@@ -31,12 +31,12 @@ resource "aws_instance" "frontend" {
     }
 }
 
-# Elastic IP
-resource "aws_eip" "frontend" {
-    instance = "${aws_instance.frontend.id}"
-    vpc      = true
-
-    tags = {
-        "Terraform" = "true"
-    }
-}
+## Elastic IP
+#resource "aws_eip" "frontend" {
+#    instance = "${aws_instance.frontend.id}"
+#    vpc      = true
+#
+#    tags = {
+#        "Terraform" = "true"
+#    }
+#}
