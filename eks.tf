@@ -1,5 +1,5 @@
 resource "aws_iam_role" "eks_prod" {
-  name = "eks-prod"
+  name = "eks_prod"
 
   assume_role_policy = <<POLICY
 {
