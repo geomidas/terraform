@@ -13,6 +13,7 @@ resource "aws_default_vpc" "default" {}
 #    ]
 #
 #    tags = {
+#        Name = "frontend"
 #        "Terraform" = "true"
 #    }
 #
