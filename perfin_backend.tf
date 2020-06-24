@@ -18,6 +18,6 @@ resource "aws_instance" "perfin-backend" {
 
 # Elastic IP
 resource "aws_eip" "perfin-backend" {
-    instance = "perfin-backend"
+    instance = "${aws_instance.perfin-backend.id}"
     vpc      = true
 }
