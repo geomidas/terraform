@@ -11,8 +11,6 @@ resource "aws_default_vpc" "default" {}
 
 # EC2 perfin frontend
 resource "aws_instance" "frontend" {
-    count = 1
-
     ami           = "ami-0ab4942aa229e00e8"
     instance_type = "t2.micro"
     key_name      = "ansible-key"
@@ -22,7 +20,6 @@ resource "aws_instance" "frontend" {
     ]
 
     tags = {
-        Name = "frontend ${count.index}"
         "Terraform" = "true"
     }
 
@@ -34,7 +31,7 @@ resource "aws_instance" "frontend" {
 # Elastic IP
 resource "aws_eip" "frontend" {
     instance = aws_instance.frontend.id
-    vpc      = true
+#    vpc      = true
 
     tags = {
         "Terraform" = "true"
