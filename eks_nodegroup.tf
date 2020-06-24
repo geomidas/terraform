@@ -1,3 +1,18 @@
+resource "aws_iam_role_policy_attachment" "prod-AmazonEKSWorkerNodePolicy" {
+  policy_arn = "arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy"
+  role       = aws_iam_role.eks_prod.name
+}
+
+resource "aws_iam_role_policy_attachment" "prod-AmazonEKS_CNI_Policy" {
+  policy_arn = "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"
+  role       = aws_iam_role.eks_prod.name
+}
+
+resource "aws_iam_role_policy_attachment" "prod-AmazonEC2ContainerRegistryReadOnly" {
+  policy_arn = "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
+  role       = aws_iam_role.eks_prod.name
+}
+
 resource "aws_eks_node_group" "prod" {
   cluster_name    = aws_eks_cluster.prod.name
   node_group_name = "eks_prod"
