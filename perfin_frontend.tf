@@ -1,7 +1,5 @@
 #variable "aws_ami_id" {}
 
-resource "aws_default_vpc" "default" {}
-
 # EC2 perfin frontend
 #resource "aws_instance" "frontend" {
 #    ami           = var.aws_ami_id
