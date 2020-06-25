@@ -3,7 +3,7 @@
        "type": "amazon-ebs",
        "region": "eu-west-1",
        "source_ami": "ami-099926fbf83aa61ed",
-       "instance_type": "t2.large",
+       "instance_type": "i3.large",
        "ssh_username": "ubuntu",
        "ami_name": "perfin-frontend-v1"
      }],
@@ -30,7 +30,7 @@
        },
        {
        "type": "shell",
-       "inline": ["ls -lh", "npm -v", "node -v", "npm install", "npm install -g serve", "serve -s build &"],
+       "inline": ["ls -lh", "npm -v", "node -v", "sudo npm install", "sudo npm start"],
        "pause_before": "10s"
        }
      ]
