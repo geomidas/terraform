@@ -1,10 +1,10 @@
-resource "aws_instance" "nginx" {
+resource "aws_instance" "sonarqube" {
     ami           = "ami-0ff610fbffc63eead"
     instance_type = "m3.medium"
     key_name      = aws_key_pair.ansible.key_name
 
     vpc_security_group_ids = [
-        aws_security_group.nginx.id
+        aws_security_group.sonarqube.id
     ]
 
     tags = {
@@ -12,8 +12,8 @@ resource "aws_instance" "nginx" {
     }
 }
 
-resource "aws_security_group" "nginx" {
-    name = "nginx"
+resource "aws_security_group" "sonarqube" {
+    name = "sonarqube"
     description = "Allow inbound http, https from my IP and all outbound"
 
     ingress {
@@ -23,8 +23,8 @@ resource "aws_security_group" "nginx" {
         cidr_blocks = ["80.233.53.33/32"]
     }
     ingress {
-        from_port = 80
-        to_port = 80
+        from_port = 9000
+        to_port = 9000
         protocol = "tcp"
         cidr_blocks = ["80.233.53.33/32"]
     }
@@ -36,10 +36,10 @@ resource "aws_security_group" "nginx" {
 }
 
 # Elastic IP
-resource "aws_eip" "nginx" {
-    instance = aws_instance.nginx.id
+resource "aws_eip" "sonarqube" {
+    instance = aws_instance.sonarqube.id
 
     tags = {
-        Name = "nginx"
+        Name = "sonarqube"
     }
 }
