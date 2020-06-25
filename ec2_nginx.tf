@@ -38,4 +38,8 @@ resource "aws_security_group" "nginx" {
 # Elastic IP
 resource "aws_eip" "nginx" {
     instance = aws_instance.nginx.id
+
+    tags = {
+        Name = "nginx"
+    }
 }
