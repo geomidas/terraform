@@ -24,8 +24,8 @@ resource "aws_security_group" "frontend" {
         cidr_blocks = ["80.233.53.33/32"]
     }
     ingress {
-        from_port = 443
-        to_port = 443
+        from_port = 22
+        to_port = 22
         protocol = "tcp"
         cidr_blocks = ["80.233.53.33/32"]
     }
@@ -39,4 +39,8 @@ resource "aws_security_group" "frontend" {
 # Elastic IP
 resource "aws_eip" "frontend" {
     instance = aws_instance.frontend.id
+
+    tags = {
+        Name = "frontend"
+    }
 }
