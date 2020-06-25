@@ -23,8 +23,8 @@ resource "aws_security_group" "sonarqube" {
         cidr_blocks = ["80.233.53.33/32"]
     }
     ingress {
-        from_port = 9000
-        to_port = 9000
+        from_port = 443
+        to_port = 443
         protocol = "tcp"
         cidr_blocks = ["80.233.53.33/32"]
     }
