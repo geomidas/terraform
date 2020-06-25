@@ -1,6 +1,6 @@
 # EC2 perfin frontend
 resource "aws_instance" "frontend" {
-    ami           = ami-00b66cbd71b21169f
+    ami           = "ami-00b66cbd71b21169f"
     instance_type = "i3.large"
     key_name      = aws_key_pair.ansible.key_name
 
