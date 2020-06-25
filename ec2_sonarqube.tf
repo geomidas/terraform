@@ -1,6 +1,6 @@
 resource "aws_instance" "sonarqube" {
     ami           = "ami-0ff610fbffc63eead"
-    instance_type = "m3.medium"
+    instance_type = "t2.micro"
     key_name      = aws_key_pair.ansible.key_name
 
     vpc_security_group_ids = [
@@ -23,8 +23,8 @@ resource "aws_security_group" "sonarqube" {
         cidr_blocks = ["80.233.53.33/32"]
     }
     ingress {
-        from_port = 9000
-        to_port = 9000
+        from_port = 22
+        to_port = 22
         protocol = "tcp"
         cidr_blocks = ["80.233.53.33/32"]
     }
