@@ -3,7 +3,7 @@
 # EC2 perfin frontend
 #resource "aws_instance" "frontend" {
 #    ami           = var.aws_ami_id
-#    instance_type = "t2.large"
+#    instance_type = "i3.large"
 #    key_name      = aws_key_pair.ansible.key_name
 #
 #    vpc_security_group_ids = [
