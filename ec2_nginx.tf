@@ -1,5 +1,5 @@
 resource "aws_instance" "nginx" {
-    ami           = "ami-0aec5ec60fa54729c"
+    ami           = "ami-0ff610fbffc63eead"
     instance_type = "m3.medium"
     key_name      = aws_key_pair.ansible.key_name
 
