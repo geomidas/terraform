@@ -30,7 +30,7 @@
        },
        {
        "type": "shell",
-       "inline": ["ls -lh", "npm -v", "node -v", "sudo npm install", "sudo npm install -g serve", "sudo serve -s build &"],
+       "inline": ["ls -lh", "npm -v", "node -v", "npm install", "npm install -g serve", "serve -s build &"],
        "pause_before": "10s"
        }
      ]
