@@ -1,4 +1,4 @@
-resource "aws_instance" "ubuntu" {
+resource "aws_instance" "nginx" {
     ami           = "ami-0aec5ec60fa54729c"
     instance_type = "m3.medium"
     key_name      = aws_key_pair.ansible.key_name
