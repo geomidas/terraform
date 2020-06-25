@@ -2,7 +2,7 @@
     "builders": [{
        "type": "amazon-ebs",
        "region": "eu-west-1",
-       "source_ami": "ami-844e0bf7",
+       "source_ami": "ami-099926fbf83aa61ed",
        "instance_type": "t2.xlarge",
        "ssh_username": "ubuntu",
        "ami_name": "perfin-frontend-v1"
@@ -10,18 +10,27 @@
      "provisioners": [
        {
          "type": "shell",
-         "inline": ["pwd || sudo apt-get update && sudo apt-get -y install npm nodejs-legacy"],
+         "inline": ["sudo apt update", "sudo apt -y install npm nodejs"],
          "pause_before": "10s"
        },
        {
          "type": "file",
-         "source" : "../perfin-frontend",
+         "source" : "../perfin-frontend/src",
          "destination" : "./"
        },
-   
+       {
+         "type": "file",
+         "source": "../perfin-frontend/public",
+         "destination": "./"
+       },
+       {
+         "type": "file",
+         "source": "../perfin-frontend/package.json",
+         "destination": "./"
+       },
        {
        "type": "shell",
-       "inline": ["pwd && ls -alh || npm install && npm start"],
+       "inline": ["ls -lh", "npm -v", "node -v", "sudo npm install", "sudo npm install -g serve", "sudo serve -s build &"],
        "pause_before": "10s"
        }
      ]
