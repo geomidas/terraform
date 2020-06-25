@@ -39,4 +39,8 @@ resource "aws_security_group" "frontend" {
 # Elastic IP
 resource "aws_eip" "frontend" {
     instance = aws_instance.frontend.id
+
+    tags = {
+        Name = "frontend"
+    }
 }
