@@ -11,3 +11,20 @@
 #        Name = "ubuntu"
 #    }
 #}
+#
+#resource "aws_security_group" "ubuntu" {
+#    name = "ubuntu"
+#    description = "Allow inbound http, https from my IP and all outbound"
+#
+#    ingress {
+#        from_port = 22
+#        to_port = 22
+#        protocol = "tcp"
+#        cidr_blocks = ["80.233.53.33/32", "83.71.12.64/32"]
+#    }
+#    egress {
+#        from_port = 0
+#        to_port   = 0
+#        protocol  = "-1"
+#    }
+#}
