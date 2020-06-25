@@ -29,9 +29,10 @@ resource "aws_security_group" "sonarqube" {
         cidr_blocks = ["80.233.53.33/32", "83.71.12.64/32"]
     }
     egress {
-        from_port = 0
-        to_port   = 0
-        protocol  = "-1"
+        from_port   = 0
+        to_port     = 0
+        protocol    = "-1"
+        cidr_blocks = ["0.0.0.0/0"]
     }
 }
 
