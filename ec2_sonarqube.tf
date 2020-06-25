@@ -1,6 +1,6 @@
 resource "aws_instance" "sonarqube" {
     ami           = "ami-0ff610fbffc63eead"
-    instance_type = "m3.medium"
+    instance_type = "t2.micro"
     key_name      = aws_key_pair.ansible.key_name
 
     vpc_security_group_ids = [
