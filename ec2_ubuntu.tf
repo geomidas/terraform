@@ -4,7 +4,7 @@ resource "aws_instance" "ubuntu" {
     key_name      = aws_key_pair.ansible.key_name
 
     vpc_security_group_ids = [
-        aws_security_group.frontend.id
+        aws_security_group.ubuntu.id
     ]
 
     tags = {
