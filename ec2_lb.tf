@@ -1,6 +1,6 @@
 resource "aws_elb" "bar" {
   name               = "foobar-terraform-elb"
-  availability_zones = ["eu-west-2a", "eu-west-2b", "eu-west-2c"]
+  availability_zones = ["eu-west-1a", "eu-west-1b", "eu-west-1c"]
 
   access_logs {
     bucket        = "foo"
